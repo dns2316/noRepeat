@@ -11,10 +11,10 @@ public class Main {
         System.out.print("Введите текст: ");
         String word = sc.nextLine();
         for(int i = 0; i < word.length(); i++){
-            if (word.charAt(i) == word.charAt(i - 1)){
+            if (word.charAt(i) == word.charAt(i + 1)){
                 length=+1;
             }
-            if (word.charAt(i) != word.charAt(i - 1)){
+            if (word.charAt(i) != word.charAt(i + 1)){
                 output = String.valueOf(+ word.charAt(i));
                 if (length > 1){
                     output = String.valueOf(+length);
