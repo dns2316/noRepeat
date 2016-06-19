@@ -5,22 +5,19 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        int length = 1;
-        String output = null;
+        String output = "";
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите текст: ");
         String word = sc.nextLine();
-        for(int i = 0; i < word.length(); i++){
-            if (word.charAt(i) == word.charAt(i + 1)){
-                length=+1;
-            }
-            if (word.charAt(i) != word.charAt(i + 1)){
-                output = String.valueOf(+ word.charAt(i));
-                if (length > 1){
-                    output = String.valueOf(+length);
-                }
+        for(int i = 0, length = 1; i < word.length(); i++) {
+            if (i + 1<word.length() && word.charAt(i) == word.charAt(i + 1) ){
+                length++;
+            } else {
+                output+=word.charAt(i);
+                if(length>1) output+=length;
+                length = 1;
             }
         }
-        System.out.print(output);
+        System.out.print(word + " = " + output);
     }
 }
