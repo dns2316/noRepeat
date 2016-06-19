@@ -6,19 +6,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int length = 1;
+        String output = null;
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите текст: ");
         String word = sc.nextLine();
         for(int i = 0; i < word.length(); i++){
-            if (word[i] == word[i + 1]){
+            if (word.charAt(i) == word.charAt(i - 1)){
                 length=+1;
             }
-            if (word[i] != word[i - 1]){
-                String a =+ word[i];
+            if (word.charAt(i) != word.charAt(i - 1)){
+                output = String.valueOf(+ word.charAt(i));
                 if (length > 1){
-                    a = String.valueOf(+length);
+                    output = String.valueOf(+length);
                 }
             }
         }
+        System.out.print(output);
     }
 }
